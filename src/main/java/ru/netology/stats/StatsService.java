@@ -45,7 +45,8 @@ public class StatsService {                     //начало
     // -----------------Пятый метод(Кол-во месяцев, в которых продажи были ниже среднего)------------//
     public int countMonthLessMid(long[] sales) {
         int lessMid = 0;
-        long midSum = calculateSum(sales) / sales.length;
+        //long midSum = calculateSum(sales) / sales.length;
+        long midSum = calculateMidSum(sales);
         for (long sale : sales) {
             if (sale < midSum) {
                 lessMid = lessMid + 1;
@@ -57,7 +58,8 @@ public class StatsService {                     //начало
     // -----------------Шестой метод (Кол-во месяцев, в которых продажи были выше среднего)------------//
     public int countMonthMoreMid(long[] sales) {
         int moreMid = 0;
-        long midSum = calculateSum(sales) / sales.length;
+        //long midSum = calculateSum(sales) / sales.length;
+        long midSum = calculateMidSum(sales);
         for (long sale : sales) {
             if (sale > midSum) {
                 moreMid = moreMid + 1;
